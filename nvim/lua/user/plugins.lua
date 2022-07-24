@@ -41,7 +41,6 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- My plugins here
-	-- use {"neoclide/coc.nvim", branch = "release"}
 	use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use {
@@ -56,9 +55,17 @@ return packer.startup(function(use)
   -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use { "windwp/nvim-autopairs" }
 
   -- Colorschemes
   use "shaunsingh/nord.nvim" 
+  
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
