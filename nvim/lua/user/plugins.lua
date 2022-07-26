@@ -41,7 +41,6 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- My plugins here
-	use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use {
     'kyazdani42/nvim-tree.lua',
@@ -52,7 +51,6 @@ return packer.startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { "windwp/nvim-autopairs" }
@@ -60,13 +58,19 @@ return packer.startup(function(use)
   -- Colorschemes
   use "shaunsingh/nord.nvim" 
   use "navarasu/onedark.nvim"
+
+  -- LSP
+  use "williamboman/nvim-lsp-installer"
   
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "neovim/nvim-lspconfig"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "hrsh7th/nvim-cmp"
+  use "L3MON4D3/LuaSnip"
+  use "saadparwaiz1/cmp_luasnip"
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
