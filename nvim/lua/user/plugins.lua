@@ -54,6 +54,7 @@ return packer.startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { "windwp/nvim-autopairs" }
+  use { "lewis6991/gitsigns.nvim", tag = "release" }
 
   -- Colorschemes
   use "shaunsingh/nord.nvim" 
