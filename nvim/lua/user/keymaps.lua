@@ -26,9 +26,12 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Disable highlight
+map("n", "<A-h>", ":noh<CR>")
+
 -- Insert --
 -- Press jk fast to enter
-map("i", "jk", "<ESC>", opts)
+map("i", "ja", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
