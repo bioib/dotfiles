@@ -11,14 +11,13 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Open Netrw Directory Listing
-map("n", "<Leader>e", "<cmd>Explore<CR>", opts)
+map("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
-function myFunc()
-  -- cur = vim.api.nvim_win_get_cursor(0)
-  -- row = cur[1]
+-- Buffers
+map("n", "<Leader>n", "<cmd>bNext<CR>", opts)
 
-  vim.api.nvim_win_set_cursor(0, {10, 0})
-end
-
-
-map("n", "<Leader>w", ":lua vim.api.nvim_win_set_cursor(0, {10, 0})<CR>")
+-- Tabs
+map("n", "<Tab>", "<cmd>tabNext<CR>", opts)
+map("n", "<S-Tab>", "<cmd>tabprevious<CR>", opts)
+map("n", "<C-n>", "<cmd>tabnew<CR>", opts)
+map("n", "<C-w>", "<cmd>tabclose<CR>", opts)
