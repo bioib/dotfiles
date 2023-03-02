@@ -13,8 +13,8 @@ local options = {
   smartcase = true,
   smarttab = true,
   tabstop = 2,
-  timeoutlen = 300,
-  wrap = true,
+  timeoutlen = 500,
+  wrap = false,
 }
 
 vim.g.mapleader = " "
