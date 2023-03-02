@@ -14,33 +14,34 @@ vim.cmd([[
 
 require("packer").init({
   display = {
-    open_fn = function() return require("packer.util").float({ border = "rounded" }) end
+    [[ open_fn = function() return require("packer.util").float({ border = "rounded" }) end ]]
   }
 })
 
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
-
-  -- Colorscheme
-  use 'navarasu/onedark.nvim'
-
-  use 'sunjon/shade.nvim'
-
-  -- lsp
-  use "neovim/nvim-lspconfig"
-  use "onsails/lspkind.nvim"
-
-  -- treesitter
-  use "nvim-treesitter/nvim-treesitter"
-
-  -- formatting
-  use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
-  use { "numToStr/Comment.nvim", config = function() require("comment").setup() end }
-
-  -- discord rich presence
-  use "andweeb/presence.nvim"
-
-  use "nvim-tree/nvim-tree.lua"
-  use "nvim-tree/nvim-web-devicons"
+  use "navarasu/onedark.nvim" -- Onedark colorscheme
+  use "neovim/nvim-lspconfig" -- lspconfig for Neovim
+  use "onsails/lspkind.nvim" -- kind icons for lsp
+  use "jose-elias-alvarez/null-ls.nvim" -- make Neovim as lsp server
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- treesitter for syntax highlighting
+  use { "nvim-telescope/telescope.nvim", tag = "0.1.1", requires = { {"nvim-lua/plenary.nvim"} } } -- fuzzy finder
+  use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } -- automatically complete pairs
+  use "numToStr/Comment.nvim" -- easily comment stuff
+  use "andweeb/presence.nvim" -- discord rich presence
+  use "nvim-tree/nvim-tree.lua" -- directory listing
+  use "nvim-tree/nvim-web-devicons" -- icons for nvim-tree
+  use { "lucastavaresa/simpleIndentGuides.nvim",
+    config = function()
+      vim.opt.list = true -- enable in all buffers
+      require("simpleIndentGuides").setup()
+    end
+  }
+  use {
+    "olimorris/persisted.nvim",
+    config = function()
+      require("persisted").setup()
+    end,
+  }
 
 end)
