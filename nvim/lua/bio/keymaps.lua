@@ -10,7 +10,7 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- Open Netrw Directory Listing
+-- Toggle Nvim Tree
 map("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- Buffers
@@ -21,3 +21,12 @@ map("n", "<Tab>", "<cmd>tabNext<CR>", opts)
 map("n", "<S-Tab>", "<cmd>tabprevious<CR>", opts)
 map("n", "<C-n>", "<cmd>tabnew<CR>", opts)
 map("n", "<C-w>", "<cmd>tabclose<CR>", opts)
+
+-- Resize windows
+map("n", "<C-Up>", "<C-w>-", opts)
+map("n", "<C-Down>", "<C-w>-", opts)
+map("n", "<C-Left>", "<C-w><", opts)
+map("n", "<C-Right>", "<C-w>>", opts)
+
+-- Remove highlights
+map("n", "<A-h>", "<cmd>noh<CR>", opts)
